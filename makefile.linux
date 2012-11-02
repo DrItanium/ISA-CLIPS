@@ -1,4 +1,11 @@
+########### LINUX MAKEFILE FOR ISA-CLIPS ###########
+### FLAGS ###
+# COMPILER - sets the compiler to use
+# OUTPUT - sets the name of the resulting executable
+# CFLAGS - additional cflags to pass to the compiler
+####################################################
 COMPILER = clang
+OUTPUT = isa-clips
 OBJS = agenda.o analysis.o argacces.o bload.o bmathfun.o bsave.o \
  	classcom.o classexm.o classfun.o classinf.o classini.o \
  	classpsr.o clsltpsr.o commline.o conscomp.o constrct.o \
@@ -28,19 +35,15 @@ OBJS = agenda.o analysis.o argacces.o bload.o bmathfun.o bsave.o \
  	strngrtr.o symblbin.o symblcmp.o symbol.o sysdep.o textpro.o \
  	tmpltbin.o tmpltbsc.o tmpltcmp.o tmpltdef.o tmpltfun.o tmpltlhs.o \
  	tmpltpsr.o tmpltrhs.o tmpltutl.o userdata.o userfunctions.o \
- 	utility.o watch.o main.o 
-OUTPUT = isa-clips
+ 	utility.o watch.o main.o binary_operations.o 
 
 .c.o :
 	$(COMPILER) -c $(CFLAGS) -DLINUX -DALLOW_ENVIRONMENT_GLOBALS=0 -std=c99 -Wall -Wundef -Wpointer-arith -Wshadow -Wcast-qual \
 	    -Wcast-align -Winline -Wmissing-declarations -Wredundant-decls \
 	    -Woverloaded-virtual -Wmissing-prototypes -Wnested-externs \
 	    -Wstrict-prototypes -Waggregate-return -Wno-implicit $<
-library: $(OBJS)
-	$(COMPILER) $(CFLAGS) -o $(OUTPUT) $(OBJS) binary_operations.c -lm -lncurses
-
-libCLIPSJNI.so : $(OBJS) CLIPSJNI_Environment.c
-	gcc -o libCLIPSJNI.so -shared -Wall -I/opt/sun-j2sdk-1.4.2/include -I/opt/sun-j2sdk-1.4.2/include/linux -lm $(OBJS) CLIPSJNI_Environment.c
+program: $(OBJS)
+	$(COMPILER) $(CFLAGS) -o $(OUTPUT) $(OBJS) -lm -lncurses
 
 agenda.o: agenda.c setup.h envrnmnt.h symbol.h usrsetup.h argacces.h \
   expressn.h exprnops.h exprnpsr.h extnfunc.h userdata.h scanner.h \
@@ -360,7 +363,6 @@ emathfun.o: emathfun.c setup.h envrnmnt.h symbol.h usrsetup.h argacces.h \
   pprint.h evaluatn.h constant.h moduldef.h conscomp.h constrct.h \
   symblcmp.h modulpsr.h utility.h router.h prntutil.h emathfun.h
 
-binary_operations.o: binary_operations.c binary_operations.h
 
 engine.o: engine.c setup.h envrnmnt.h symbol.h usrsetup.h agenda.h \
   ruledef.h conscomp.h constrct.h moduldef.h modulpsr.h evaluatn.h \
@@ -1259,5 +1261,8 @@ watch.o: watch.c setup.h envrnmnt.h symbol.h usrsetup.h constant.h \
   memalloc.h router.h prntutil.h moduldef.h conscomp.h constrct.h \
   userdata.h evaluatn.h expressn.h exprnops.h exprnpsr.h extnfunc.h \
   scanner.h pprint.h symblcmp.h modulpsr.h utility.h argacces.h watch.h
+
+binary_operations.o: binary_operations.c clips.h binary_operations.h
+
 clean:
-	rm -f clips *.o
+	rm -f $(OUTPUT) *.o
