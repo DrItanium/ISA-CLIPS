@@ -8,4 +8,5 @@ extern long long BinaryAndFunction(void*);
 extern long long BinaryOrFunction(void*);
 extern long long BinaryXorFunction(void*);
 extern long long BinaryNotFunction(void*);
+extern long long SliceFunction(void*);
 #endif
