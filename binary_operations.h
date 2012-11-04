@@ -12,4 +12,5 @@ extern long long SliceFunction(void*);
 extern void Slice8Function(void*, DATA_OBJECT_PTR);
 extern void Slice4Function(void*, DATA_OBJECT_PTR);
 extern void Slice2Function(void*, DATA_OBJECT_PTR);
+extern long long MergeFunction(void*);
 #endif
