@@ -102,6 +102,10 @@
 #define WIN_GCC 0   /* Windows XP, with DJGPP 3.21 */
 #endif
 
+#ifndef ANDROID
+#define ANDROID 0   /* Android 2.3 and higher */
+#endif
+
 /* The following are unsupported: */
                     
 #ifndef VAX_VMS                    
