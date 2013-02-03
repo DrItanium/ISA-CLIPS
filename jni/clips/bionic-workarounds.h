@@ -28,5 +28,5 @@ SOFTWARE.
  * actually implement setlocale. We use the environment as a way to get the JNI
  * context out so it's usable.
  */
-char* bionic_setlocale(void* theEnv, int value, char* value);
+char* bionic_setlocale(void* theEnv, int value, char* str);
 #endif
