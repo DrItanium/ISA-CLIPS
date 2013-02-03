@@ -119,7 +119,10 @@ globle void IOFunctionDefinitions(
 	 * 
 	 * Fixing this requires that the code jumps into java and calls getLocale
 	 * there. 
+	 *
+	 * However, for now I just want to set it to "C"
 	*/
+	IOFunctionData(theEnv)->locale = (SYMBOL_HN *) EnvAddSymbol(theEnv,"C");
 #else
    IOFunctionData(theEnv)->locale = (SYMBOL_HN *) EnvAddSymbol(theEnv,setlocale(LC_ALL,NULL));
 #endif
