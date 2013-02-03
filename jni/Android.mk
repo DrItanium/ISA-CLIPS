@@ -38,6 +38,6 @@ clips/sortfun.c clips/strngfun.c clips/strngrtr.c clips/symblbin.c clips/symblcm
 clips/symbol.c clips/sysdep.c clips/textpro.c clips/tmpltbin.c clips/tmpltbsc.c \
 clips/tmpltcmp.c clips/tmpltdef.c clips/tmpltfun.c clips/tmpltlhs.c clips/tmpltpsr.c \
 clips/tmpltrhs.c clips/tmpltutl.c clips/userdata.c clips/userfunctions.c clips/utility.c \
-clips/watch.c clips/bionic-workarounds.c
+clips/watch.c 
 
 include $(BUILD_SHARED_LIBRARY)
