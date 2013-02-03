@@ -111,7 +111,18 @@ globle void IOFunctionDefinitions(
 
 #if IO_FUNCTIONS
    IOFunctionData(theEnv)->useFullCRLF = FALSE;
+#if ANDROID
+	/*
+	 * While bionic contains setlocale, it always returns NULL.
+	 * This causes CLIPS to signal a clean exit due to internal structure
+	 * corruption
+	 * 
+	 * Fixing this requires that the code jumps into java and calls getLocale
+	 * there. 
+	*/
+#else
    IOFunctionData(theEnv)->locale = (SYMBOL_HN *) EnvAddSymbol(theEnv,setlocale(LC_ALL,NULL));
+#endif
    IncrementSymbolCount(IOFunctionData(theEnv)->locale);
 #endif
 
