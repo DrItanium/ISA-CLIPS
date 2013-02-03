@@ -1,5 +1,5 @@
 
-#include "CLIPSJNI_Environment.h"
+#include "clips_Environment.h"
 
 #include "clips.h"
 
