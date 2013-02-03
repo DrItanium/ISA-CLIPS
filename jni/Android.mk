@@ -3,7 +3,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := clips 
-LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/clips/include
+LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/clips
 LOCAL_SRC_FILES := clips/agenda.c clips/analysis.c clips/argacces.c clips/binary_operations.c clips/bload.c \
 clips/bmathfun.c clips/bsave.c clips/classcom.c clips/classexm.c clips/classfun.c \
 clips/classinf.c clips/classini.c clips/classpsr.c clips/clips_Environment.c clips/clsltpsr.c \
@@ -38,6 +38,6 @@ clips/sortfun.c clips/strngfun.c clips/strngrtr.c clips/symblbin.c clips/symblcm
 clips/symbol.c clips/sysdep.c clips/textpro.c clips/tmpltbin.c clips/tmpltbsc.c \
 clips/tmpltcmp.c clips/tmpltdef.c clips/tmpltfun.c clips/tmpltlhs.c clips/tmpltpsr.c \
 clips/tmpltrhs.c clips/tmpltutl.c clips/userdata.c clips/userfunctions.c clips/utility.c \
-clips/watch.c
+clips/watch.c clips/bionic-workarounds.c
 
 include $(BUILD_SHARED_LIBRARY)
