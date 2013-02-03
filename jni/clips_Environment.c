@@ -258,13 +258,13 @@ static int UngetcJNIRouter(
   }
 
 /*******************************************************/
-/* Java_CLIPSJNI_Environment_getCLIPSVersion: Native   */
+/* Java_clips_Environment_getCLIPSVersion: Native   */
 /*   function for the CLIPSJNI getCLIPSVersion method. */
 /* Class:     CLIPSJNI_Environment                     */
 /* Method:    getCLIPSVersion                          */
 /* Signature: ()Ljava/lang/String;                     */
 /*******************************************************/
-JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getCLIPSVersion(
+JNIEXPORT jstring JNICALL Java_clips_Environment_getCLIPSVersion(
   JNIEnv *env, 
   jclass cls) 
   {
@@ -272,13 +272,13 @@ JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getCLIPSVersion(
   }
 
 /************************************************/
-/* Java_CLIPSJNI_Environment_createEnvironment: */
+/* Java_clips_Environment_createEnvironment: */
 /*                                              */
 /*    Class:     CLIPSJNI_Environment           */
 /*    Method:    createEnvironment              */
 /*    Signature: ()J                            */
 /************************************************/
-JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_createEnvironment(
+JNIEXPORT jlong JNICALL Java_clips_Environment_createEnvironment(
   JNIEnv *env, 
   jobject obj)
   {
@@ -313,15 +313,15 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_createEnvironment(
    theLongClass = (*env)->FindClass(env,"java/lang/Long"); 
    theDoubleClass = (*env)->FindClass(env,"java/lang/Double"); 
    theArrayListClass = (*env)->FindClass(env,"java/util/ArrayList"); 
-   theVoidValueClass = (*env)->FindClass(env,"CLIPSJNI/VoidValue");
-   theIntegerValueClass = (*env)->FindClass(env,"CLIPSJNI/IntegerValue");
-   theFloatValueClass = (*env)->FindClass(env,"CLIPSJNI/FloatValue");
-   theSymbolValueClass = (*env)->FindClass(env,"CLIPSJNI/SymbolValue");
-   theStringValueClass = (*env)->FindClass(env,"CLIPSJNI/StringValue");
-   theInstanceNameValueClass = (*env)->FindClass(env,"CLIPSJNI/InstanceNameValue");
-   theMultifieldValueClass = (*env)->FindClass(env,"CLIPSJNI/MultifieldValue");
-   theFactAddressValueClass = (*env)->FindClass(env,"CLIPSJNI/FactAddressValue");
-   theInstanceAddressValueClass = (*env)->FindClass(env,"CLIPSJNI/InstanceAddressValue");
+   theVoidValueClass = (*env)->FindClass(env,"clips/VoidValue");
+   theIntegerValueClass = (*env)->FindClass(env,"clips/IntegerValue");
+   theFloatValueClass = (*env)->FindClass(env,"clips/FloatValue");
+   theSymbolValueClass = (*env)->FindClass(env,"clips/SymbolValue");
+   theStringValueClass = (*env)->FindClass(env,"clips/StringValue");
+   theInstanceNameValueClass = (*env)->FindClass(env,"clips/InstanceNameValue");
+   theMultifieldValueClass = (*env)->FindClass(env,"clips/MultifieldValue");
+   theFactAddressValueClass = (*env)->FindClass(env,"clips/FactAddressValue");
+   theInstanceAddressValueClass = (*env)->FindClass(env,"clips/InstanceAddressValue");
                 
    /*=========================================*/
    /* If the Java classes could not be found, */
@@ -356,8 +356,8 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_createEnvironment(
    theStringValueInitMethod = (*env)->GetMethodID(env,theStringValueClass,"<init>","(Ljava/lang/String;)V");
    theInstanceNameValueInitMethod = (*env)->GetMethodID(env,theInstanceNameValueClass,"<init>","(Ljava/lang/String;)V");
    theMultifieldValueInitMethod = (*env)->GetMethodID(env,theMultifieldValueClass,"<init>","(Ljava/util/List;)V");
-   theFactAddressValueInitMethod = (*env)->GetMethodID(env,theFactAddressValueClass,"<init>","(JLCLIPSJNI/Environment;)V");
-   theInstanceAddressValueInitMethod = (*env)->GetMethodID(env,theInstanceAddressValueClass,"<init>","(JLCLIPSJNI/Environment;)V");
+   theFactAddressValueInitMethod = (*env)->GetMethodID(env,theFactAddressValueClass,"<init>","(JLclips/Environment;)V");
+   theInstanceAddressValueInitMethod = (*env)->GetMethodID(env,theInstanceAddressValueClass,"<init>","(JLclips/Environment;)V");
 
    /*==============================================*/
    /* If the Java init methods could not be found, */
@@ -469,14 +469,14 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_createEnvironment(
   }
 
 /*********************************************/
-/* Java_CLIPSJNI_Environment_clear: Native   */ 
+/* Java_clips_Environment_clear: Native   */ 
 /*   function for the CLIPSJNI clear method. */
 /*                                           */
 /* Class:     CLIPSJNI_Environment           */
 /* Method:    clear                          */
 /* Signature: (J)V                           */
 /*********************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_clear(
+JNIEXPORT void JNICALL Java_clips_Environment_clear(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv)
@@ -489,14 +489,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_clear(
   }
 
 /*********************************************/
-/* Java_CLIPSJNI_Environment_reset: Native   */ 
+/* Java_clips_Environment_reset: Native   */ 
 /*   function for the CLIPSJNI reset method. */
 /*                                           */
 /* Class:     CLIPSJNI_Environment           */
 /* Method:    reset                          */
 /* Signature: (J)V                           */
 /*********************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_reset(
+JNIEXPORT void JNICALL Java_clips_Environment_reset(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv)
@@ -509,14 +509,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_reset(
   }
 
 /********************************************/
-/* Java_CLIPSJNI_Environment_load: Native   */ 
+/* Java_clips_Environment_load: Native   */ 
 /*   function for the CLIPSJNI load method. */
 /*                                          */
 /* Class:     CLIPSJNI_Environment          */
 /* Method:    load                          */
 /* Signature: (JLjava/lang/String;)V        */
 /********************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_load(
+JNIEXPORT void JNICALL Java_clips_Environment_load(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv,
@@ -534,14 +534,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_load(
   }
 
 /*************************************************/
-/* Java_CLIPSJNI_Environment_loadFacts: Native   */ 
+/* Java_clips_Environment_loadFacts: Native   */ 
 /*   function for the CLIPSJNI loadFacts method. */
 /*                                               */
 /* Class:     CLIPSJNI_Environment               */
 /* Method:    loadFact                           */
 /* Signature: (JLjava/lang/String;)Z             */
 /*************************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_loadFacts(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_loadFacts(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv,
@@ -562,14 +562,14 @@ JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_loadFacts(
   }
 
 /*********************************************/
-/* Java_CLIPSJNI_Environment_watch: Native   */ 
+/* Java_clips_Environment_watch: Native   */ 
 /*   function for the CLIPSJNI watch method. */
 /*                                           */
 /* Class:     CLIPSJNI_Environment           */
 /* Method:    watch                          */
 /* Signature: (JLjava/lang/String;)Z         */
 /*********************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_watch(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_watch(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv,
@@ -590,14 +590,14 @@ JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_watch(
   }
 
 /***********************************************/
-/* Java_CLIPSJNI_Environment_unwatch: Native   */ 
+/* Java_clips_Environment_unwatch: Native   */ 
 /*   function for the CLIPSJNI unwatch method. */
 /*                                             */
 /* Class:     CLIPSJNI_Environment             */
 /* Method:    unwatch                          */
 /* Signature: (JLjava/lang/String;)Z           */
 /***********************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_unwatch(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_unwatch(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv,
@@ -618,14 +618,14 @@ JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_unwatch(
   }
 
 /**************************************************/
-/* Java_CLIPSJNI_Environment_run: Native function */ 
+/* Java_clips_Environment_run: Native function */ 
 /*   for the CLIPSJNI run method.                 */
 /*                                                */
 /* Class:     CLIPSJNI_Environment                */
 /* Method:    run                                 */
 /* Signature: (JJ)J                               */
 /**************************************************/
-JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_run(
+JNIEXPORT jlong JNICALL Java_clips_Environment_run(
   JNIEnv *env, 
   jobject obj, 
   jlong clipsEnv,
@@ -642,7 +642,7 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_run(
   }
 
 /*************************************************************/
-/* Java_CLIPSJNI_Environment_eval: Native function for the   */
+/* Java_clips_Environment_eval: Native function for the   */
 /*   CLIPSJNI eval method.                                   */
 /*                                                           */
 /* Class:     CLIPSJNI_Environment                           */
@@ -650,7 +650,7 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_run(
 /* Signature: (JLjava/lang/String;)LCLIPSJNI/PrimitiveValue; */
 /*                                                           */
 /*************************************************************/
-JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_eval(
+JNIEXPORT jobject JNICALL Java_clips_Environment_eval(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv,
@@ -838,14 +838,14 @@ static jobject ConvertSingleFieldValue(
   }
 
 /****************************************************/
-/* Java_CLIPSJNI_Environment_build: Native function */
+/* Java_clips_Environment_build: Native function */
 /*   for the CLIPSJNI build method.                 */
 /*                                                  */
 /* Class:     CLIPSJNI_Environment                  */
 /* Method:    build                                 */
 /* Signature: (JLjava/lang/String;)Z                */
 /****************************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_build(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_build(
   JNIEnv *env, 
   jobject obj, 
   jlong clipsEnv,
@@ -867,14 +867,14 @@ JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_build(
   }
 
 /***************************************************************/
-/* Java_CLIPSJNI_Environment_assertString: Native function for */
+/* Java_clips_Environment_assertString: Native function for */
 /*   the CLIPSJNI assertString method.                         */
 /*                                                             */
 /* Class:     CLIPSJNI_Environment                             */
 /* Method:    assertString                                     */
 /* Signature: (JLjava/lang/String;)LCLIPSJNI/FactAddressValue; */
 /***************************************************************/
-JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_assertString(
+JNIEXPORT jobject JNICALL Java_clips_Environment_assertString(
   JNIEnv *env,
   jobject obj, 
   jlong clipsEnv, 
@@ -902,14 +902,14 @@ JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_assertString(
   }
 
 /*************************************************/
-/* Java_CLIPSJNI_Environment_factIndex: Native   */
+/* Java_clips_Environment_factIndex: Native   */
 /*   function for the CLIPSJNI factIndex method. */
 /*                                               */
 /* Class:     CLIPSJNI_Environment               */
 /* Method:    factIndex                          */
 /* Signature: (LCLIPSJNI/Environment;JJ)J        */
 /*************************************************/
-JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_factIndex(
+JNIEXPORT jlong JNICALL Java_clips_Environment_factIndex(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -928,7 +928,7 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_factIndex(
   }
 
 /**************************************************************/
-/* Java_CLIPSJNI_Environment_getFactSlot: Native function     */
+/* Java_clips_Environment_getFactSlot: Native function     */
 /*   for the CLIPSJNI getFactSlot method.                     */
 /*                                                            */
 /* Class:     CLIPSJNI_Environment                            */
@@ -936,7 +936,7 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_factIndex(
 /* Signature: (LCLIPSJNI/Environment;JJLjava/lang/String;)    */
 /*            LCLIPSJNI/PrimitiveValue;                       */
 /**************************************************************/
-JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_getFactSlot(
+JNIEXPORT jobject JNICALL Java_clips_Environment_getFactSlot(
   JNIEnv *env,
   jclass javaClass, 
   jobject javaEnv,
@@ -963,7 +963,7 @@ JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_getFactSlot(
   }
 
 /**********************************************************/
-/* Java_CLIPSJNI_Environment_incrementFactCount: Native   */
+/* Java_clips_Environment_incrementFactCount: Native   */
 /*   function for the CLIPSJNI incrementFactCount method. */
 /*                                                        */
 /*                                                        */
@@ -971,7 +971,7 @@ JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_getFactSlot(
 /* Method:    incrementFactCount                          */
 /* Signature: (LCLIPSJNI/Environment;JJ)V                 */
 /**********************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementFactCount(
+JNIEXPORT void JNICALL Java_clips_Environment_incrementFactCount(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -986,7 +986,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementFactCount(
   }
   
 /**********************************************************/
-/* Java_CLIPSJNI_Environment_decrementFactCount: Native   */
+/* Java_clips_Environment_decrementFactCount: Native   */
 /*   function for the CLIPSJNI decrementFactCount method. */
 /*                                                        */
 /*                                                        */
@@ -994,7 +994,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementFactCount(
 /* Method:    decrementFactCount                          */
 /* Signature: (LCLIPSJNI/Environment;JJ)V                 */
 /**********************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_decrementFactCount(
+JNIEXPORT void JNICALL Java_clips_Environment_decrementFactCount(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -1009,14 +1009,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_decrementFactCount(
   }
   
 /*******************************************************************/
-/* Java_CLIPSJNI_Environment_makeInstance: Native function for the */
+/* Java_clips_Environment_makeInstance: Native function for the */
 /*   CLIPSJNI makeInstance method.                                 */
 /*                                                                 */
 /* Class:     CLIPSJNI_Environment                                 */
 /* Method:    makeInstance                                         */
 /* Signature: (JLjava/lang/String;)LCLIPSJNI/InstanceAddressValue; */
 /*******************************************************************/
-JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_makeInstance(
+JNIEXPORT jobject JNICALL Java_clips_Environment_makeInstance(
   JNIEnv *env,
   jobject obj, 
   jlong clipsEnv, 
@@ -1047,14 +1047,14 @@ JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_makeInstance(
   }
 
 /***********************************************************/
-/* Java_CLIPSJNI_Environment_getInstanceName: Native       */
+/* Java_clips_Environment_getInstanceName: Native       */
 /*   function for the CLIPSJNI getInstanceName method.     */
 /*                                                         */
 /* Class:     CLIPSJNI_Environment                         */
 /* Method:    getInstanceName                              */
 /* Signature: (LCLIPSJNI/Environment;JJ)Ljava/lang/String; */
 /***********************************************************/
-JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getInstanceName(
+JNIEXPORT jstring JNICALL Java_clips_Environment_getInstanceName(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -1072,7 +1072,7 @@ JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getInstanceName(
   }
 
 /**************************************************************/
-/* Java_CLIPSJNI_Environment_incrementInstanceCount: Native   */
+/* Java_clips_Environment_incrementInstanceCount: Native   */
 /*   function for the CLIPSJNI incrementInstanceCount method. */
 /*                                                            */
 /*                                                            */
@@ -1080,7 +1080,7 @@ JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getInstanceName(
 /* Method:    incrementInstanceCount                          */
 /* Signature: (LCLIPSJNI/Environment;JJ)V                     */
 /**************************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementInstanceCount(
+JNIEXPORT void JNICALL Java_clips_Environment_incrementInstanceCount(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -1095,7 +1095,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementInstanceCount(
   }
   
 /**************************************************************/
-/* Java_CLIPSJNI_Environment_decrementInstanceCount: Native   */
+/* Java_clips_Environment_decrementInstanceCount: Native   */
 /*   function for the CLIPSJNI decrementInstanceCount method. */
 /*                                                            */
 /*                                                            */
@@ -1103,7 +1103,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_incrementInstanceCount(
 /* Method:    decrementInstanceCount                          */
 /* Signature: (LCLIPSJNI/Environment;JJ)V                     */
 /**************************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_decrementInstanceCount(
+JNIEXPORT void JNICALL Java_clips_Environment_decrementInstanceCount(
   JNIEnv *env, 
   jclass javaClass, 
   jobject javaEnv,
@@ -1118,7 +1118,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_decrementInstanceCount(
   }
 
 /**************************************************************/
-/* Java_CLIPSJNI_Environment_directGetSlot: Native function   */
+/* Java_clips_Environment_directGetSlot: Native function   */
 /*   for the CLIPSJNI directGetSlot method.                   */
 /*                                                            */
 /* Class:     CLIPSJNI_Environment                            */
@@ -1126,7 +1126,7 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_decrementInstanceCount(
 /* Signature: (LCLIPSJNI/Environment;JJLjava/lang/String;)    */
 /*            LCLIPSJNI/PrimitiveValue;                       */
 /**************************************************************/
-JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_directGetSlot(
+JNIEXPORT jobject JNICALL Java_clips_Environment_directGetSlot(
   JNIEnv *env,
   jclass javaClass, 
   jobject javaEnv,
@@ -1153,14 +1153,14 @@ JNIEXPORT jobject JNICALL Java_CLIPSJNI_Environment_directGetSlot(
   }
 
 /**********************************************************/
-/* Java_CLIPSJNI_Environment_destroyEnvironment: Native   */
+/* Java_clips_Environment_destroyEnvironment: Native   */
 /*   function for the CLIPSJNI destroyEnvironment method. */
 /*                                                        */
 /* Class:     CLIPSJNI_Environment                        */
 /* Method:    destroyEnvironment                          */
 /* Signature: (J)V                                        */
 /**********************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_destroyEnvironment(
+JNIEXPORT void JNICALL Java_clips_Environment_destroyEnvironment(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1171,14 +1171,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_destroyEnvironment(
   }
 
 /***************************************************/
-/* Java_CLIPSJNI_Environment_commandLoop: Native   */
+/* Java_clips_Environment_commandLoop: Native   */
 /*   function for the CLIPSJNI commandLoop method. */
 /*                                                 */
 /* Class:     CLIPSJNI_Environment                 */
 /* Method:    commandLoop                          */
 /* Signature: (J)V                                 */
 /***************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_commandLoop(
+JNIEXPORT void JNICALL Java_clips_Environment_commandLoop(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1189,14 +1189,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_commandLoop(
   }
 
 /****************************************************************/
-/* Java_CLIPSJNI_Environment_commandLoopOnceThenBatch: Native   */
+/* Java_clips_Environment_commandLoopOnceThenBatch: Native   */
 /*   function for the CLIPSJNI commandLoopOnceThenBatch method. */
 /*                                                              */
 /* Class:     CLIPSJNI_Environment                              */
 /* Method:    commandLoopOnceThenBatch                          */
 /* Signature: (J)V                                              */
 /****************************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_commandLoopOnceThenBatch(
+JNIEXPORT void JNICALL Java_clips_Environment_commandLoopOnceThenBatch(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1207,14 +1207,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_commandLoopOnceThenBatch(
   }
 
 /***************************************************/
-/* Java_CLIPSJNI_Environment_printBanner: Native   */
+/* Java_clips_Environment_printBanner: Native   */
 /*   function for the CLIPSJNI printBanner method. */
 /*                                                 */
 /* Class:     CLIPSJNI_Environment                 */
 /* Method:    printBanner                          */
 /* Signature: (J)V                                 */
 /***************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_printBanner(
+JNIEXPORT void JNICALL Java_clips_Environment_printBanner(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1227,14 +1227,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_printBanner(
   }
 
 /***************************************************/
-/* Java_CLIPSJNI_Environment_printPrompt: Native   */
+/* Java_clips_Environment_printPrompt: Native   */
 /*   function for the CLIPSJNI printPrompt method. */
 /*                                                 */
 /* Class:     CLIPSJNI_Environment                 */
 /* Method:    printPrompt                          */
 /* Signature: (J)V                                 */
 /***************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_printPrompt(
+JNIEXPORT void JNICALL Java_clips_Environment_printPrompt(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1247,14 +1247,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_printPrompt(
   }
 
 /******************************************************/
-/* Java_CLIPSJNI_Environment_getInputBuffer: Native   */
+/* Java_clips_Environment_getInputBuffer: Native   */
 /*   function for the CLIPSJNI getInputBuffer method. */
 /*                                                    */
 /* Class:     CLIPSJNI_Environment                    */
 /* Method:    getInputBuffer                          */
 /* Signature: (J)Ljava/lang/String;                   */
 /******************************************************/
-JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getInputBuffer(
+JNIEXPORT jstring JNICALL Java_clips_Environment_getInputBuffer(
   JNIEnv *env, 
   jobject obj, 
   jlong clipsEnv)
@@ -1282,14 +1282,14 @@ JNIEXPORT jstring JNICALL Java_CLIPSJNI_Environment_getInputBuffer(
   }
 
 /******************************************************/
-/* Java_CLIPSJNI_Environment_setInputBuffer: Native   */
+/* Java_clips_Environment_setInputBuffer: Native   */
 /*   function for the CLIPSJNI setInputBuffer method. */
 /*                                                    */
 /* Class:     CLIPSJNI_Environment                    */
 /* Method:    setInputBuffer                          */
 /* Signature: (JLjava/lang/String;)V                  */
 /******************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_setInputBuffer(
+JNIEXPORT void JNICALL Java_clips_Environment_setInputBuffer(
   JNIEnv *env, 
   jobject obj,
   jlong clipsEnv,
@@ -1307,14 +1307,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_setInputBuffer(
   }
 
 /***********************************************************/
-/* Java_CLIPSJNI_Environment_getInputBufferCount: Native   */
+/* Java_clips_Environment_getInputBufferCount: Native   */
 /*   function for the CLIPSJNI getInputBufferCount method. */
 /*                                                         */
 /* Class:     CLIPSJNI_Environment                         */
 /* Method:    getInputBufferCount                          */
 /* Signature: (J)J                                         */
 /***********************************************************/
-JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_getInputBufferCount(
+JNIEXPORT jlong JNICALL Java_clips_Environment_getInputBufferCount(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv)
@@ -1330,14 +1330,14 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_getInputBufferCount(
   }
 
 /***********************************************************/
-/* Java_CLIPSJNI_Environment_setInputBufferCount: Native   */
+/* Java_clips_Environment_setInputBufferCount: Native   */
 /*   function for the CLIPSJNI setInputBufferCount method. */
 /*                                                         */
 /* Class:     CLIPSJNI_Environment                         */
 /* Method:    setInputBufferCount                          */
 /* Signature: (JJ)J                                        */
 /***********************************************************/
-JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_setInputBufferCount(
+JNIEXPORT jlong JNICALL Java_clips_Environment_setInputBufferCount(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv,
@@ -1357,14 +1357,14 @@ JNIEXPORT jlong JNICALL Java_CLIPSJNI_Environment_setInputBufferCount(
   }
 
 /*********************************************************/
-/* Java_CLIPSJNI_Environment_appendInputBuffer: Native   */
+/* Java_clips_Environment_appendInputBuffer: Native   */
 /*   function for the CLIPSJNI appendInputBuffer method. */
 /*                                                       */
 /* Class:     CLIPSJNI_Environment                       */
 /* Method:    appendInputBuffer                          */
 /* Signature: (JLjava/lang/String;)V                     */
 /*********************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_appendInputBuffer(
+JNIEXPORT void JNICALL Java_clips_Environment_appendInputBuffer(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv,
@@ -1382,14 +1382,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_appendInputBuffer(
   }
 
 /*********************************************************/
-/* Java_CLIPSJNI_Environment_expandInputBuffer: Native   */
+/* Java_clips_Environment_expandInputBuffer: Native   */
 /*   function for the CLIPSJNI expandInputBuffer method. */
 /*                                                       */
 /* Class:     CLIPSJNI_Environment                       */
 /* Method:    expandInputBuffer                          */
 /* Signature: (JC)V                                      */
 /*********************************************************/
-JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_expandInputBuffer(
+JNIEXPORT void JNICALL Java_clips_Environment_expandInputBuffer(
   JNIEnv *env,
   jobject obj,
   jlong clipsEnv,
@@ -1403,14 +1403,14 @@ JNIEXPORT void JNICALL Java_CLIPSJNI_Environment_expandInputBuffer(
   }
 
 /******************************************************************/
-/* Java_CLIPSJNI_Environment_inputBufferContainsCommand: Native   */
+/* Java_clips_Environment_inputBufferContainsCommand: Native   */
 /*   function for the CLIPSJNI inputBufferContainsCommand method. */
 /*                                                                */
 /* Class:     CLIPSJNI_Environment                                */
 /* Method:    inputBufferContainsCommand                          */
 /* Signature: (J)Z                                                */
 /******************************************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_inputBufferContainsCommand(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_inputBufferContainsCommand(
   JNIEnv *env,
   jobject obj, 
   jlong clipsEnv)
@@ -1426,14 +1426,14 @@ JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_inputBufferContainsCommand(
   }
 
 /*******************************************************/
-/* Java_CLIPSJNI_Environment_addRouter: Native         */
+/* Java_clips_Environment_addRouter: Native         */
 /*   function for the CLIPSJNI addRouter method.       */
 /*                                                     */
 /* Class:     CLIPSJNI_Environment                     */
 /* Method:    addRouter                                */
 /* Signature: (JLjava/lang/String;ILCLIPSJNI/Router;)Z */
 /*******************************************************/
-JNIEXPORT jboolean JNICALL Java_CLIPSJNI_Environment_addRouter(
+JNIEXPORT jboolean JNICALL Java_clips_Environment_addRouter(
   JNIEnv *env, 
   jobject obj, 
   jlong clipsEnv, 

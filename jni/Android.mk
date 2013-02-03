@@ -22,5 +22,5 @@ proflfun.c reorder.c reteutil.c retract.c router.c rulebin.c rulebld.c rulebsc.c
 rulecom.c rulecstr.c ruledef.c ruledlt.c rulelhs.c rulepsr.c scanner.c sortfun.c strngfun.c \
 strngrtr.c symblbin.c symblcmp.c symbol.c sysdep.c textpro.c tmpltbin.c tmpltbsc.c tmpltcmp.c \
 tmpltdef.c tmpltfun.c tmpltlhs.c tmpltpsr.c tmpltrhs.c tmpltutl.c userdata.c userfunctions.c \
-utility.c watch.c CLIPSJNI_Environment.c
+utility.c watch.c clips_Environment.c
 include $(BUILD_SHARED_LIBRARY)
