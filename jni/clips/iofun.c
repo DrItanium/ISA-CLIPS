@@ -111,7 +111,7 @@ globle void IOFunctionDefinitions(
 
 #if IO_FUNCTIONS
    IOFunctionData(theEnv)->useFullCRLF = FALSE;
-#if ANDROID
+#ifdef __ANDROID__ 
 	/*
 	 * While bionic contains setlocale, it always returns NULL.
 	 * This causes CLIPS to signal a clean exit due to internal structure
