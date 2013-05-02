@@ -72,7 +72,7 @@ struct restriction
 
 struct method
   {
-   short index;
+   unsigned index;
    unsigned busy;
    short restrictionCount;
    short minRestrictions;
